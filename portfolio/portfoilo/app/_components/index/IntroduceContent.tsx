@@ -1,7 +1,7 @@
 'use client';
 
 import useInterval from '@/app/_hooks/useInterval';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const IntroduceContent = () => {
   const [landingContent, setLandingContent] = useState('');
@@ -36,8 +36,8 @@ const IntroduceContent = () => {
       <h5 className="text-[72px] font-extrabold tracking-[4px] mb-[48px]">
         안녕하세요, 저는
       </h5>
-      <div className="flex flex-col h-[60px]">
-        <p className="text-[24px] font-medium mb-[12px] tracking-[2px] whitespace-pre-wrap leading-10">
+      <div className="h-[60px]">
+        <p className="text-[24px] font-medium mb-[12px] tracking-[2px] whitespace-pre inline leading-10 animate-typingCursor">
           {landingContent}
         </p>
       </div>
