@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Noto_Sans } from 'next/font/google';
 import './globals.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import images from '../_constants/images';
 
 const notoSans = Noto_Sans({
   weight: ['300', '400', '500', '700', '800'],
@@ -23,7 +26,18 @@ export default function RootLayout({
       <body
         className={`${notoSans.className} w-[100uvw] h-[100uvh] flex justify-center`}
       >
-        {children}
+        <main className="flex min-h-screen font-bold text-lg w-full max-w-[1024px]">
+          <Link href="/">
+            <Image
+              className="absolute z-10 mt-[66px] ml-[24px]"
+              src={images.common.logo}
+              alt="goHome"
+              width={66}
+              height={32}
+            />
+          </Link>
+          {children}
+        </main>
       </body>
     </html>
   );

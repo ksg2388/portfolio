@@ -1,7 +1,11 @@
-export default function Home() {
+import IntroduceContent from '../_components/index/IntroduceContent';
+
+const Home = () => {
   return (
-    <main className="flex min-h-screen font-bold text-lg w-full max-w-[1024px] bg-slate-400">
-      hi
-    </main>
+    <div className="w-full flex items-center">
+      <IntroduceContent />
+    </div>
   );
-}
+};
+
+export default Home;
