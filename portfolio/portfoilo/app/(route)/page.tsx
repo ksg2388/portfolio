@@ -1,9 +1,9 @@
-import IntroduceContent from '../_components/index/IntroduceContent';
+import FullPageContentContainer from '../_components/index/FullPageContentContainer';
 
 const Home = () => {
   return (
-    <div className="w-full flex items-center">
-      <IntroduceContent />
+    <div className="flex w-full overflow-hidden">
+      <FullPageContentContainer />
     </div>
   );
 };

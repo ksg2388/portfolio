@@ -7,6 +7,10 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      'primary-300': '#191765',
+      'grey-200': '#D9D9D9',
+    },
     extend: {
       keyframes: {
         typingCursor: {
@@ -21,6 +25,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  plugins: [require('tailwind-scrollbar-hide')],
 };
 export default config;

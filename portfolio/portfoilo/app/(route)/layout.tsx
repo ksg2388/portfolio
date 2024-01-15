@@ -24,12 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSans.className} w-[100uvw] h-[100uvh] flex justify-center`}
+        className={`${notoSans.className} w-[100dvw] h-[100dvh] flex justify-center`}
       >
-        <main className="flex min-h-screen font-bold text-lg w-full max-w-[1024px]">
+        <main className="flex min-h-screen font-bold text-lg w-full">
           <Link href="/">
             <Image
-              className="absolute z-10 mt-[66px] ml-[24px]"
+              className="absolute z-10 mt-[66px] ml-[84px]"
               src={images.common.logo}
               alt="goHome"
               width={66}

@@ -75,16 +75,16 @@ const IntroduceContent = () => {
   }, time);
 
   return (
-    <section className="ml-[160px] flex flex-col">
+    <div className="flex flex-col flex-1 items-center justify-center">
       <h5 className="text-[72px] font-extrabold tracking-[4px] mb-[48px]">
         안녕하세요, 저는
       </h5>
-      <div className="h-[60px]">
+      <div className="h-[60px] text-center">
         <p className="text-[24px] font-medium mb-[12px] tracking-[2px] whitespace-pre inline leading-10 animate-typingCursor">
           {landingContent}
         </p>
       </div>
-    </section>
+    </div>
   );
 };
 
