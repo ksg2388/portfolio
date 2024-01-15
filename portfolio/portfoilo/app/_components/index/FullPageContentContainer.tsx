@@ -11,7 +11,8 @@ import DotList from './DotList';
 const DIVIDER_HEIGHT = 5;
 
 const FullPageContentContainer = () => {
-  const outerRef = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement | null>(null);
+  const timeoutRef = useRef<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
@@ -20,6 +21,9 @@ const FullPageContentContainer = () => {
       const { deltaY } = e;
       const { scrollTop } = outerRef.current as HTMLDivElement; // 스크롤 위쪽 끝부분 위치
       const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같다
+      console.log(timeoutRef.current);
+
+      if (timeoutRef.current) return;
 
       if (deltaY > 0) {
         // 스크롤 내릴 때
@@ -119,6 +123,9 @@ const FullPageContentContainer = () => {
           setCurrentPage(4);
         }
       }
+      timeoutRef.current = window.setTimeout(() => {
+        timeoutRef.current = null;
+      }, 1500);
     };
     const outerDivRefCurrent = outerRef.current;
 
@@ -126,6 +133,9 @@ const FullPageContentContainer = () => {
 
     return () => {
       outerDivRefCurrent?.removeEventListener('wheel', wheelHandler);
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
 
