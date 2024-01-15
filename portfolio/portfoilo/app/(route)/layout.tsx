@@ -4,6 +4,7 @@ import './globals.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import images from '../_constants/images';
+import RecoilContainer from '../_components/common/RecoilContainer';
 
 const notoSans = Noto_Sans({
   weight: ['300', '400', '500', '700', '800'],
@@ -22,23 +23,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${notoSans.className} w-[100dvw] h-[100dvh] flex justify-center`}
-      >
-        <main className="flex min-h-screen font-bold text-lg w-full">
-          <Link href="/">
-            <Image
-              className="absolute z-10 mt-[66px] ml-[84px]"
-              src={images.common.logo}
-              alt="goHome"
-              width={66}
-              height={32}
-            />
-          </Link>
-          {children}
-        </main>
-      </body>
-    </html>
+    <RecoilContainer>
+      <html lang="en">
+        <body
+          className={`${notoSans.className} w-[100dvw] h-[100dvh] flex justify-center`}
+        >
+          <main className="flex min-h-screen font-bold text-lg w-full">
+            <Link href="/">
+              <Image
+                className="absolute z-10 mt-[66px] ml-[84px]"
+                src={images.common.logo}
+                alt="goHome"
+                width={66}
+                height={32}
+              />
+            </Link>
+            {children}
+          </main>
+        </body>
+      </html>
+    </RecoilContainer>
   );
 }

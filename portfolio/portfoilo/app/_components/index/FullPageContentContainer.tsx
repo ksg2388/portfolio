@@ -1,6 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { pageState } from '@/app/_atom/indexAtom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useRecoilState } from 'recoil';
 import IntroduceContainer from './IntroduceContainer';
 import AboutMe from './AboutMe';
 import TechnologyStack from './TechnologyStack';
@@ -13,7 +16,7 @@ const DIVIDER_HEIGHT = 5;
 const FullPageContentContainer = () => {
   const outerRef = useRef<HTMLDivElement | null>(null);
   const timeoutRef = useRef<number | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useRecoilState(pageState);
 
   useEffect(() => {
     const wheelHandler = (e: WheelEvent) => {
@@ -137,7 +140,17 @@ const FullPageContentContainer = () => {
         window.clearTimeout(timeoutRef.current);
       }
     };
-  }, []);
+  }, [setCurrentPage]);
+
+  useEffect(() => {
+    const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같다
+
+    outerRef.current?.scrollTo({
+      top: pageHeight * (currentPage - 1) + DIVIDER_HEIGHT * (currentPage - 1),
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, [currentPage]);
 
   return (
     <div
