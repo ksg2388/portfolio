@@ -1,6 +1,9 @@
 const images = {
   common: {
-    logo: '/images/common/logo-black.png',
+    logoBlack: '/images/common/logo-black.png',
+    logoWhite: '/images/common/logo-white.png',
+    lightMode: '/images/common/ic-mode-light.png',
+    darkMode: '/images/common/ic-mode-dark.png',
   },
 };
 

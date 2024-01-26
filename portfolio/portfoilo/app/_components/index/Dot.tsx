@@ -14,8 +14,11 @@ const Dot = ({ num, currentPage }: Props) => {
     // eslint-disable-next-line jsx-a11y/control-has-associated-label
     <button
       className={`w-[10px] h-[10px] rounded-[50%] ${
-        currentPage === num ? 'bg-primary-300' : 'bg-grey-200'
-      } transition-[background-color 0.5s] duration-[1s]`}
+        currentPage === num
+          ? 'bg-grey-800 dark:bg-grey-100'
+          : 'bg-grey-200 dark:bg-grey-700'
+      }
+      transition-[background-color 0.5s] duration-[1s]`}
       onClick={() => {
         return setCurrentPage(num);
       }}

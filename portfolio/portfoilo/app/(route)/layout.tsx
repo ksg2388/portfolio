@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { Noto_Sans } from 'next/font/google';
 import './globals.css';
-import Link from 'next/link';
-import Image from 'next/image';
-import images from '../_constants/images';
 import RecoilContainer from '../_components/common/RecoilContainer';
+import ThemeButton from '../_components/common/ThemeButton';
+import Logo from '../_components/common/Logo';
+import ThemeSettingScript from '../_components/common/ThemeSettingScript';
 
 const notoSans = Noto_Sans({
   weight: ['300', '400', '500', '700', '800'],
@@ -24,20 +24,14 @@ export default function RootLayout({
 }) {
   return (
     <RecoilContainer>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body
-          className={`${notoSans.className} w-[100dvw] h-[100dvh] flex justify-center`}
+          className={`${notoSans.className} w-[100dvw] h-[100dvh] flex justify-center dark:bg-grey-900 dark:text-grey-50`}
         >
+          <ThemeSettingScript />
           <main className="flex min-h-screen font-bold text-lg w-full">
-            <Link href="/">
-              <Image
-                className="absolute z-10 mt-[66px] ml-[84px]"
-                src={images.common.logo}
-                alt="goHome"
-                width={66}
-                height={32}
-              />
-            </Link>
+            <Logo />
+            <ThemeButton />
             {children}
           </main>
         </body>

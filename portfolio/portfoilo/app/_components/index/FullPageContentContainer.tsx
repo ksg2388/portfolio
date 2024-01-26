@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { pageState } from '@/app/_atom/indexAtom';
+import useLoad from '@/app/_hooks/useLoad';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useRecoilState } from 'recoil';
 import IntroduceContainer from './IntroduceContainer';
@@ -17,6 +18,7 @@ const FullPageContentContainer = () => {
   const outerRef = useRef<HTMLDivElement | null>(null);
   const timeoutRef = useRef<number | null>(null);
   const [currentPage, setCurrentPage] = useRecoilState(pageState);
+  const isLoad = useLoad();
 
   useEffect(() => {
     const wheelHandler = (e: WheelEvent) => {
@@ -153,21 +155,23 @@ const FullPageContentContainer = () => {
   }, [currentPage]);
 
   return (
-    <div
-      className="w-full overflow-y-auto h-screen scrollbar-hide"
-      ref={outerRef}
-    >
-      <DotList currentPage={currentPage} />
-      <IntroduceContainer />
-      <div className="w-full h-[5px]" />
-      <AboutMe />
-      <div className="w-full h-[5px]" />
-      <TechnologyStack />
-      <div className="w-full h-[5px]" />
-      <ProjectDescription />
-      <div className="w-full h-[5px]" />
-      <HonerAndAward />
-    </div>
+    isLoad && (
+      <div
+        className="w-full overflow-y-auto h-screen scrollbar-hide"
+        ref={outerRef}
+      >
+        <DotList currentPage={currentPage} />
+        <IntroduceContainer />
+        <div className="w-full h-[5px]" />
+        <AboutMe />
+        <div className="w-full h-[5px]" />
+        <TechnologyStack />
+        <div className="w-full h-[5px]" />
+        <ProjectDescription />
+        <div className="w-full h-[5px]" />
+        <HonerAndAward />
+      </div>
+    )
   );
 };
 
