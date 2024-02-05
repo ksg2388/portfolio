@@ -21,6 +21,8 @@ const FullPageContentContainer = () => {
   const isLoad = useLoad();
 
   useEffect(() => {
+    console.log('[start]', outerRef.current);
+
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
       const { deltaY } = e;
@@ -142,7 +144,7 @@ const FullPageContentContainer = () => {
         window.clearTimeout(timeoutRef.current);
       }
     };
-  }, [setCurrentPage]);
+  }, [setCurrentPage, isLoad]);
 
   useEffect(() => {
     const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같다
