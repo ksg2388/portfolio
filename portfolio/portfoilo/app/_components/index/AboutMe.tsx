@@ -10,7 +10,7 @@ const AboutMe = () => {
 
   return (
     <div className="h-screen w-full flex flex-col">
-      <h2 className="w-full text-center mt-[120px] font-bold text-[48px]">
+      <h2 className="w-full text-center mt-[80px] font-bold text-[48px]">
         About Me
       </h2>
       <div className="flex items-center flex-1 mx-[auto]">
