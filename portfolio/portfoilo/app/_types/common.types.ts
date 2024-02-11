@@ -13,3 +13,10 @@ export type FrontendSkillType =
   | 'Redux'
   | 'ReactQuery'
   | 'Sass';
+
+export type ProjectThumbnailType = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  skillStack: string[];
+};
