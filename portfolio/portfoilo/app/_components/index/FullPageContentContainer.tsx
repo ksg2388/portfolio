@@ -25,6 +25,7 @@ const FullPageContentContainer = () => {
 
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
+
       const { deltaY } = e;
       const { scrollTop } = outerRef.current as HTMLDivElement; // 스크롤 위쪽 끝부분 위치
       const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같다

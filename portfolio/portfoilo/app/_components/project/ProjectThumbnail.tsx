@@ -1,14 +1,30 @@
 import { ProjectThumbnailType } from '@/app/_types/common.types';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 type Props = {
   project: ProjectThumbnailType;
+  handleItem: (id: number) => void;
 };
 
-const ProjectThumbnail = ({ project }: Props) => {
+const ProjectThumbnail = ({ project, handleItem }: Props) => {
   return (
-    <div className="flex flex-col w-[30%] h-full rounded-[16px] overflow-hidden transition-transform duration-300 hover:scale-[1.03] shadow-lg dark:bg-grey-800">
-      <div className="w-full h-[50%] overflow-hidden">
+    <motion.div
+      className="flex flex-col w-[30%] h-full rounded-[16px] overflow-hidden shadow-lg dark:bg-grey-800"
+      onClick={() => {
+        return handleItem(project.id);
+      }}
+      role="presentation"
+      layoutId={`container-${project.id}`}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.3 },
+      }}
+    >
+      <motion.div
+        className="w-full h-[50%] overflow-hidden"
+        layoutId={`project-image-${project.id}`}
+      >
         <Image
           className="w-full h-full object-cover"
           src={project.imageUrl}
@@ -17,8 +33,13 @@ const ProjectThumbnail = ({ project }: Props) => {
           height={0}
           sizes="100vw"
         />
-      </div>
-      <div className="mt-[24px] text-[24px] px-[12px]">{project.title}</div>
+      </motion.div>
+      <motion.div
+        className="mt-[24px] text-[24px] px-[12px]"
+        layoutId={`project-title-${project.id}`}
+      >
+        {project.title}
+      </motion.div>
       <div className="mt-[12px] text-[18px] px-[12px] font-medium">
         {project.description}
       </div>
@@ -28,16 +49,16 @@ const ProjectThumbnail = ({ project }: Props) => {
           {project.skillStack.map((skill) => {
             return (
               <div
-                key={skill}
+                key={skill.name}
                 className="bg-grey-100 dark:bg-grey-700 py-[4px] px-[8px] rounded-[24px] text-[14px] font-medium"
               >
-                {skill}
+                {skill.name}
               </div>
             );
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

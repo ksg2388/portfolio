@@ -2,9 +2,12 @@ import FullPageContentContainer from '../_components/index/FullPageContentContai
 
 const Home = () => {
   return (
-    <div className="flex w-full overflow-hidden">
-      <FullPageContentContainer />
-    </div>
+    <>
+      <div id="portal" />
+      <div className="flex w-full overflow-hidden max-w-[1280px] mx-auto">
+        <FullPageContentContainer />
+      </div>
+    </>
   );
 };
 
