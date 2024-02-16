@@ -3,6 +3,7 @@
 import { themeState } from '@/app/_atom/indexAtom';
 import images from '@/app/_constants/images';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRecoilValue } from 'recoil';
 
 const AboutMe = () => {
@@ -93,6 +94,50 @@ const AboutMe = () => {
             <div className="text-[22px] font-[400] ml-[24px]">
               경북대학교 글로벌SW융합전공(졸업)
             </div>
+          </div>
+          <div className="flex items-center">
+            <span className="material-symbols-outlined mr-[0px] text-[32px]">
+              link
+            </span>
+            <div className="text-[24px] font-medium text-center w-[140px]">
+              추가 정보
+            </div>
+            <Link
+              className="ml-[12px] relative group"
+              href="https://github.com/ksg2388"
+              target="_blank"
+            >
+              <div className="absolute top-[-24px] right-[-24px] rounded-[8px] px-[6px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[12px] font-[400] bg-grey-50 dark:bg-grey-700">
+                깃허브
+              </div>
+              <Image
+                className="rounded-[50%]"
+                src={
+                  themeMode === 'LIGHT_MODE'
+                    ? '/images/logo/logo-github.png'
+                    : '/images/logo/logo-github-white.png'
+                }
+                alt=""
+                width={40}
+                height={40}
+              />
+            </Link>
+            <Link
+              className="ml-[16px] relative group"
+              href="https://velog.io/@ksg2388/posts"
+              target="_blank"
+            >
+              <div className="absolute top-[-24px] right-[-24px] rounded-[8px] px-[6px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[12px] font-[400] bg-grey-50 dark:bg-grey-700">
+                블로그
+              </div>
+              <Image
+                className="rounded-[50%]"
+                src="/images/logo/logo-velog.png"
+                alt=""
+                width={40}
+                height={40}
+              />
+            </Link>
           </div>
         </div>
       </div>
