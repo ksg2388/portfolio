@@ -154,6 +154,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -162,6 +163,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -170,6 +172,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -178,6 +181,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -186,6 +190,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -194,6 +199,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -202,6 +208,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -210,6 +217,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -218,6 +226,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -226,6 +235,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -234,6 +244,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
@@ -242,6 +253,7 @@ const TechnologyStack = () => {
             {
               type: 'spring',
               duration: 0.25,
+              at: 0,
             },
           ],
           [
