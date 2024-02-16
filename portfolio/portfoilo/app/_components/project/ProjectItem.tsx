@@ -3,10 +3,10 @@ import projects from '@/app/_constants/project';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRecoilValue } from 'recoil';
+import Link from 'next/link';
 import HeulgitTroubleshooting from './HeulgitTroubleshooting';
 import MMGameLandTroubleshooting from './MMGameLandTroubleshooting';
 import MMMarbleTroubleshooting from './MMMarbleTroubleshooting';
-import Link from 'next/link';
 
 type Props = {
   selectedId: number;

@@ -27,6 +27,8 @@ const images = {
     vueJs: '/images/logo/logo-vuejs.png',
     emotion: '/images/logo/logo-emotion.png',
     reactQuery: '/images/logo/logo-react-query.png',
+    ssafy: '/images/logo/logo-ssafy.png',
+    wim: '/images/logo/logo-wim.png',
   } as { [key: string]: string },
 };
 
