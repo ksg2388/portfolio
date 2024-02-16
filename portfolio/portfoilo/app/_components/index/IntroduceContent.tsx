@@ -45,8 +45,8 @@ const IntroduceContent = () => {
       });
     }
     if (mode === 'DELETE') {
-      if (time !== 75) {
-        setTime(75);
+      if (time !== 40) {
+        setTime(40);
       }
 
       // 다 지운 경우
