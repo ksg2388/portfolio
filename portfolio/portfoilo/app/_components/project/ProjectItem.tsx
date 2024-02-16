@@ -6,6 +6,7 @@ import { useRecoilValue } from 'recoil';
 import HeulgitTroubleshooting from './HeulgitTroubleshooting';
 import MMGameLandTroubleshooting from './MMGameLandTroubleshooting';
 import MMMarbleTroubleshooting from './MMMarbleTroubleshooting';
+import Link from 'next/link';
 
 type Props = {
   selectedId: number;
@@ -20,8 +21,16 @@ const ProjectItem = ({ selectedId, removeSelectedItem }: Props) => {
     <motion.div
       className="flex-col absolute z-[10] top-0 left-0 w-full h-fit bg-grey-0 dark:bg-grey-800 px-[120px] py-[40px]"
       layoutId={`container-${selectedId}`}
-      onClick={removeSelectedItem}
     >
+      <button
+        className="fixed top-[8px] right-[8px]"
+        onClick={removeSelectedItem}
+        type="button"
+      >
+        <span className="material-symbols-outlined mr-[8px] text-[44px]">
+          close
+        </span>
+      </button>
       <div className="max-w-[1280px] h-full mx-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
         <motion.div
           className="text-[56px] font-extrabold mt-[60px]"
@@ -69,7 +78,9 @@ const ProjectItem = ({ selectedId, removeSelectedItem }: Props) => {
                     height={28}
                     className="mr-[8px]"
                   />
-                  <div>{item.url}</div>
+                  <Link href={`${item.url}`} target="_blank">
+                    {item.url}
+                  </Link>
                 </div>
               );
             })}
