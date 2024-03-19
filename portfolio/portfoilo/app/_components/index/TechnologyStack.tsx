@@ -4,7 +4,7 @@ import { themeState } from '@/app/_atom/indexAtom';
 import images from '@/app/_constants/images';
 import skills from '@/app/_constants/skills';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { useAnimate } from 'framer-motion';
+import { motion, useAnimate } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
@@ -18,8 +18,10 @@ const TechnologyStack = () => {
     name: string;
     description: string;
   }>(null);
+  const [isClick, setIsClick] = useState(false);
 
   const handleFrontend = () => {
+    setIsClick(true);
     if (isAction) return;
 
     setIsAction(true);
@@ -258,7 +260,7 @@ const TechnologyStack = () => {
           ],
           [
             scope.current,
-            { x: ['42%', '0%'], y: ['3%', '0%'], opacity: [1, 0] },
+            { x: ['42%', '0%'], y: ['3%', '-5%'], opacity: [1, 0] },
             {
               type: 'spring',
               duration: 0.5,
@@ -368,6 +370,28 @@ const TechnologyStack = () => {
         Skills
       </h2>
       <div className="flex flex-1 relative">
+        {!isClick && (
+          <motion.div
+            className="absolute flex items-center top-[43%] left-[13%] translate-y-[-43%]  z-[4]"
+            animate={{
+              x: [0, 50, 0],
+              y: [0, 50, 0],
+            }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          >
+            <Image
+              className="-rotate-45"
+              src={images.common.click}
+              alt=""
+              width={32}
+              height={32}
+            />
+          </motion.div>
+        )}
         <button
           className="absolute flex items-center top-[40%] left-[5%] translate-y-[-40%] justify-center rounded-[50%] w-[100px] h-[100px] cursor-pointer text-[16px] z-[3] shadow-lg"
           onClick={handleFrontend}
@@ -404,7 +428,7 @@ const TechnologyStack = () => {
                   backgroundClip: 'content-box, border-box',
                 }}
                 onMouseOver={() => {
-                  return handleMouseOver(skill.name);
+                  return selectedSkill && handleMouseOver(skill.name);
                 }}
                 onMouseLeave={() => {
                   setFocusSkill(null);

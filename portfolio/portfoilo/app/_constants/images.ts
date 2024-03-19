@@ -13,6 +13,7 @@ const images = {
     emailWhite: '/images/common/ic-email-white.png',
     phone: '/images/common/ic-phone.png',
     phoneWhite: '/images/common/ic-phone-white.png',
+    click: '/images/common/ic-click.png',
   },
   logo: {
     react: '/images/logo/logo-react.png',
