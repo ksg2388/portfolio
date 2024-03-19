@@ -150,6 +150,22 @@ const projects: ProjectType[] = [
           '반복되는 로직 Custom Hook으로 분리를 통한 코드량 감소 (로직 분리 전 대비 코드량 20% 감소)',
         ],
       },
+      {
+        mainContent: '앱 다운로드 페이지 구현',
+        subContents: [
+          'ios, android 기종을 탐자하여 기종에 맞는 웹앱 다운로드 가이드 페이지 가이드 화면 구현',
+          '웹앱 다운로드(A2HS) 버튼 구현',
+        ],
+      },
+      {
+        mainContent: '크로스 브라우징 대응',
+        subContents: [
+          '사파리 ios, android 등의 환경에 모두 대응하기위해 크로스 브라우징 작업',
+          'Android 가상 키보드 높이 조절 이슈 해결',
+          'PWA ios 가로모드 설정이 안먹는 이슈 해결',
+          'ios 브라우저 환경에서 A2HS(홈 화면에 추가) 버튼이 활성화 되지 않는 이슈 해결',
+        ],
+      },
     ],
   },
   {
@@ -195,19 +211,34 @@ const projects: ProjectType[] = [
         ],
       },
       {
-        mainContent: '앱 다운로드 페이지 구현',
+        mainContent: '재사용 가능한 공통 컴포넌트 개발',
         subContents: [
-          'ios, android 기종을 탐자하여 기종에 맞는 웹앱 다운로드 가이드 페이지 가이드 화면 구현',
-          '웹앱 다운로드(A2HS) 버튼 구현',
+          'Custom Button 구현',
+          'React portal을 이용한 재사용 가능한 Modal 컴포넌트 구현',
         ],
       },
       {
-        mainContent: '크로스 브라우징 대응',
+        mainContent: '생산성 향상 작업',
         subContents: [
-          '사파리 ios, android 등의 환경에 모두 대응하기위해 크로스 브라우징 작업',
-          'Android 가상 키보드 높이 조절 이슈 해결',
-          'PWA ios 가로모드 설정이 안먹는 이슈 해결',
-          'ios 브라우저 환경에서 A2HS(홈 화면에 추가) 버튼이 활성화 되지 않는 이슈 해결',
+          '기존 컴포넌트별로 관리되던 토스트 메시지를 전역에서 관리하도록 개선하여 생산성 향상',
+          'axios intersepter를 훅으로 만들어 효율적으로 인증 작업 처리',
+          'useModal 커스텀 훅을 이용해 모달 로직을 간편하게 사용할 수 있도록 구현',
+        ],
+      },
+      {
+        mainContent: 'OAuth (네이버 로그인) 구현',
+        subContents: [],
+      },
+      {
+        mainContent: 'Vite를 이용해 프로젝트 초기 세팅',
+        subContents: [
+          '배포 환경에서 빌드 속도를 개선하기 위해서 기존 Webpack으로 사용해왔던 프로젝트 초기 세팅 대신 Vite를 사용하여 프로젝트를 초기 세팅',
+        ],
+      },
+      {
+        mainContent: '컴포넌트, 라우트 구조 설계',
+        subContents: [
+          '인증이 필요한 화면과 필요하지 않은 화면을 Private Route 설정을 통해 구분하여 관리',
         ],
       },
     ],

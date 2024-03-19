@@ -19,7 +19,7 @@ const ProjectItem = ({ selectedId, removeSelectedItem }: Props) => {
 
   return (
     <motion.div
-      className="flex-col absolute z-[10] top-0 left-0 w-full h-fit bg-grey-50 dark:bg-grey-800 px-[120px] py-[40px]"
+      className="flex-col absolute z-[11] top-0 left-0 w-full h-fit bg-grey-50 dark:bg-grey-800 px-[120px] py-[40px]"
       layoutId={`container-${selectedId}`}
     >
       <button
